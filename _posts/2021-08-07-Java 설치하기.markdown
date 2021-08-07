@@ -4,9 +4,7 @@ title:  "Java 설치하기 @ MacOS"
 date:   2021-08-07 16:00:00 +0900
 categories: Java Github
 ---
-# Java 설치하기
-
-다음 내용은 코드스쿼드 인프런 강의를 참고하여 작성하였습니다.
+다음 내용은 코드스쿼드 인프런 강의를 참고하여 작성하였습니다.  
 [인프런 강의 링크][inflearn-link]
 
 ```javascript
