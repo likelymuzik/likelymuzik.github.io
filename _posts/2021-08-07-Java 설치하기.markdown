@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Java 시작하기 @ MacOS"
+title:  "Java 시작하기 @ macOS"
 date:   2021-08-07 16:00:00 +0900
 categories: Java Github
 ---
@@ -10,32 +10,46 @@ categories: Java Github
 # Java 설치하기
 -----
 * ### 구글에서 "jdk download"를 검색한다.  
-
 ![jdk_download](/assets/img/search_jdk_download.png)
 
 * ### 다운로드 페이지에 접속 후, JDK Download 버튼을 클릭한다. (Java SE 8)  
-
 ![jdk_download_button](/assets/img/JDK_Download.png)
 
 * ### macOS x64버전을 다운로드 받는다 (21-08-07 기준, 8u301이 최신)  
 오라클 로그인이 필요하므로 만약 계정이 없다면 계정을 생성한다.  
-
 ![macOS](/assets/img/macOS.png)
 
 * ### 다운로드한 .dmg 파일을 더블클릭하여 .pkg 설치파일을 실행한다.  
 [계속] 버튼을 클릭하여 설치를 마무리한다.
-
 ![java_install](/assets/img/java_install.png)
 
 * ### 터미널을 실행하여 다음 명령어를 통해 정상 설치 여부를 확인한다.  
-
 ```
 java -version
 ```
-
 ![java_version](/assets/img/java_version.png)
 
 # Eclipse 설치하기
 -----
 * ### 구글에서 "eclipse download"를 검색한다.  
+![eclipse_download](/assets/img/eclipse_download.png)
 
+* ### Download Packages 링크를 클릭하여 다운로드 페이지로 이동한다.
+![download_package](/assets/img/download_package.png)
+
+* ### 다양한 Version 중 [Eclipse IDE for Java Developers]을 다운 받는다.
+![eclipse_ide](/assets/img/eclipse_ide.png)
+
+* ### .dmg 파일을 실행하여 Eclipse 프로그램을 옮기고 싶은 폴더로 이동시킨다.
+![move_eclipse](/assets/img/move_eclipse.png)
+
+# Eclipse 처음 실행하기
+-----
+* ### 처음 Eclipse 실행시 workspace 위치를 지정해야한다.
+![workplace](/assets/img/workplace.png)
+
+* ### [Browse...] 버튼을 클릭하여 원하는 폴더를 workplace로 지정한다.
+![select_workplace](/assets/img/select_workplace.png)
+
+* ### 짝짝짝! Eclipse가 성공적으로 실행되었다.
+![eclipse_start](/assets/img/eclipse_start.png)
