@@ -15,12 +15,12 @@ categories: Java Github
 
 * ### 다운로드 페이지에 접속 후, JDK Download 버튼을 클릭한다. (Java SE 8)  
 
-![jdk_download_button](/assets/img/JDK_Download.png){: width="60%"}
+![jdk_download_button](/assets/img/JDK_Download.png)
 
 * ### macOS x64버전을 다운로드 받는다 (21-08-07 기준, 8u301이 최신)  
 오라클 로그인이 필요하므로 만약 계정이 없다면 계정을 생성한다.  
 
-![macOS](/assets/img/macOS.png){: width="60%"}
+![macOS](/assets/img/macOS.png)
 
 * ### 다운로드한 .dmg 파일을 더블클릭하여 .pkg 설치파일을 실행한다.  
 [계속] 버튼을 클릭하여 설치를 마무리한다.
@@ -37,4 +37,5 @@ java -version
 
 # Eclipse 설치하기
 -----
-* ### 구글에서 "eclipse download"를 검색한다.
+* ### 구글에서 "eclipse download"를 검색한다.  
+
