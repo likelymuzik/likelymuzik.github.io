@@ -1,27 +1,40 @@
 ---
 layout: post
-title:  "Java 설치하기 @ MacOS"
+title:  "Java 시작하기 @ MacOS"
 date:   2021-08-07 16:00:00 +0900
 categories: Java Github
 ---
 다음 내용은 코드스쿼드 인프런 강의를 참고하여 작성하였습니다.  
-[인프런 강의 링크][inflearn-link]
+[인프런 강의 링크](https://www.inflearn.com/course/java-codesquad/dashboard)
 
-```javascript
-const Razorpay = require('razorpay');
+# Java 설치하기
+-----
+* ### 구글에서 "jdk download"를 검색한다.  
 
-let rzp = Razorpay({
-	key_id: 'KEY_ID',
-	secret: 'name'
-});
+![jdk_download](/assets/img/search_jdk_download.png){: width="60%"}
 
-// capture request
-rzp.capture(payment_id, cost)
-	.then(function (data) {
-		return 2;
-	})
+* ### 다운로드 페이지에 접속 후, JDK Download 버튼을 클릭한다. (Java SE 8)  
+
+![jdk_download_button](/assets/img/JDK_Download.png){: width="60%"}
+
+* ### macOS x64버전을 다운로드 받는다 (21-08-07 기준, 8u301이 최신)  
+오라클 로그인이 필요하므로 만약 계정이 없다면 계정을 생성한다.  
+
+![macOS](/assets/img/macOS.png){: width="60%"}
+
+* ### 다운로드한 .dmg 파일을 더블클릭하여 .pkg 설치파일을 실행한다.  
+[계속] 버튼을 클릭하여 설치를 마무리한다.
+
+![java_install](/assets/img/java_install.png){: width="60%"}
+
+* ### 터미널을 실행하여 다음 명령어를 통해 정상 설치 여부를 확인한다.  
+
+```
+java -version
 ```
 
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
+![java_version](/assets/img/java_version.png){: width="60%"}  
 
-[inflearn-link]: https://www.inflearn.com/course/java-codesquad/dashboard
+# Eclipse 설치하기
+-----
+* ### 구글에서 "eclipse download"를 검색한다.
