@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Java 시작하기 @ macOS"
+title:  "01. Java 시작하기 @ macOS"
 date:   2021-08-07 16:00:00 +0900
 categories: Java Github
 ---
