@@ -11,7 +11,7 @@ categories: Java Github
 -----
 * ### 구글에서 "jdk download"를 검색한다.  
 
-![jdk_download](/assets/img/search_jdk_download.png){: width="60%"}
+![jdk_download](/assets/img/search_jdk_download.png)
 
 * ### 다운로드 페이지에 접속 후, JDK Download 버튼을 클릭한다. (Java SE 8)  
 
@@ -25,7 +25,7 @@ categories: Java Github
 * ### 다운로드한 .dmg 파일을 더블클릭하여 .pkg 설치파일을 실행한다.  
 [계속] 버튼을 클릭하여 설치를 마무리한다.
 
-![java_install](/assets/img/java_install.png){: width="60%"}
+![java_install](/assets/img/java_install.png)
 
 * ### 터미널을 실행하여 다음 명령어를 통해 정상 설치 여부를 확인한다.  
 
@@ -33,7 +33,7 @@ categories: Java Github
 java -version
 ```
 
-![java_version](/assets/img/java_version.png){: width="60%"}  
+![java_version](/assets/img/java_version.png)
 
 # Eclipse 설치하기
 -----
