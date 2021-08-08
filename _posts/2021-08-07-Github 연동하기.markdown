@@ -1,0 +1,57 @@
+---
+layout: post
+title:  "03. Github 연동하기"
+date:   2021-08-08 10:00:00 +0900
+categories: Java Github
+---
+다음 내용은 코드스쿼드 인프런 강의를 참고하여 작성하였습니다.  
+[인프런 강의 링크](https://www.inflearn.com/course/java-codesquad/dashboard)
+
+# Github 서비스
+-----
+* ### Github 사이트에 접속하여 로그인을 합니다. (계정이 없다면 가입해주세요!)
+아직 많이 허전한 github 계정...  
+[Repositories]를 클릭합니다.
+![github_first](/assets/img/github_first.png)
+
+* ### 새로운 Repository를 생성합니다. 
+[New] 버튼 클릭.
+![new_repository](/assets/img/new_repository.png)
+"hello-world"라는 이름으로 생성.
+![create_repository](/assets/img/create_repository.png)
+
+# Eclipse 연동
+-----
+* ### 동기화하려고 하는 Project이름 위에 마우스를 올리고 오른쪽 버튼을 클릭한다.
+[Team] - [Share Poject...] 메뉴 순차적으로 선택.
+![share_project](/assets/img/share_project.png)
+
+* ### 내 컴퓨터에 Git 저장소를 생성한다.
+[Use or create repository in parent folder of project] 체크.
+![loacal_git_1](/assets/img/local_git_1.png)
+[Create Repository] 버튼 클릭.
+![loacal_git_2](/assets/img/local_git_2.png)
+
+* ### 방금 생성한 로컬 Git저장소에 현재 프로젝트를 추가한다.
+[Team] - [Add to Index] 클릭하여 업데이트할 내용 추가.
+![add_index](/assets/img/add_index.png)
+
+* ### 업데이트할 내용을 Stage로 올린 후, Message를 적고 Commit 한다.
+[Team] - [Commit] 클릭.
+![commit](/assets/img/commit.png)
+마우스로 드래그하여 Unstaged Changes를 Staged Changes로 옮긴다.
+![change_stage](/assets/img/change_stage.png)
+commit 메시지를 적고 [Commit] 버튼 클릭.
+![commit_msg](/assets/img/commit_msg.png)
+
+* ### Commit한 내용을 Push하여 Github 저장소와 동기화한다.
+[Team] - [Push Branch 'master'...] 클릭.
+![commit_push](/assets/img/commit_push.png)
+URI에 Github Repository 주소를 넣고 아이디와 비밀번호를 입력한다.
+![link_github](/assets/img/link_github.png)
+[Push] 버튼 클릭.
+![push_button](/assets/img/push_button.png)
+
+  
+* ### 동기화된 "hello-world" Github Repository 모습.
+![success_hello](/assets/img/success_hello.png)

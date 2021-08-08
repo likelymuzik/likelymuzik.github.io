@@ -7,7 +7,7 @@ categories: Java Github
 다음 내용은 코드스쿼드 인프런 강의를 참고하여 작성하였습니다.  
 [인프런 강의 링크](https://www.inflearn.com/course/java-codesquad/dashboard)
 
-# Hello World 출력하기
+# Hello World!
 -----
 * ### 새로운 Project를 생성한다.
 (cmd + N) 단축키를 활용하여 [Select a wizard] 창을 연다  
