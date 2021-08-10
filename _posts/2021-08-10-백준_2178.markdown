@@ -1,0 +1,90 @@
+---
+layout: post
+title:  "[백준] 2178. 미로 탐색"
+date:   2021-08-10 22:00:00 +0900
+categories: 백준 알고리즘
+---
+[백준 2178번](https://www.acmicpc.net/problem/2178)
+
+# 문제
+-----
+N×M크기의 배열로 표현되는 미로가 있다.
+
+1	0	1	1	1	1  
+1	0	1	0	1	0  
+1	0	1	0	1	1  
+1	1	1	0	1	1  
+
+미로에서 1은 이동할 수 있는 칸을 나타내고, 0은 이동할 수 없는 칸을 나타낸다.   
+이러한 미로가 주어졌을 때, (1, 1)에서 출발하여 (N, M)의 위치로 이동할 때 지나야 하는 최소의 칸 수를 구하는 프로그램을 작성하시오.   
+한 칸에서 다른 칸으로 이동할 때, 서로 인접한 칸으로만 이동할 수 있다.  
+위의 예에서는 15칸을 지나야 (N, M)의 위치로 이동할 수 있다. 칸을 셀 때에는 시작 위치와 도착 위치도 포함한다.
+
+# 입력
+-----
+첫째 줄에 두 정수 N, M(2 ≤ N, M ≤ 100)이 주어진다.  
+다음 N개의 줄에는 M개의 정수로 미로가 주어진다.   
+각각의 수들은 붙어서 입력으로 주어진다.
+```
+4 6
+101111
+101010
+101011
+111011
+```
+
+# 출력
+-----
+첫째 줄에 지나야 하는 최소의 칸 수를 출력한다. 항상 도착위치로 이동할 수 있는 경우만 입력으로 주어진다.  
+```
+15
+```
+
+# 풀이
+-----
+최단 거리를 구하는 문제로 BFS를 통해 최적의 해를 구할 수 있다.  
+따라서 collections 패키지의 deque 자료 구조를 사용하여 BFS를 수행하며 목적지의 depth를 구해야 한다.  
+입력으로 <u>각각의 수들은 붙어서 입력으로 주어진다.</u>  
+이 부분을 처리하기 위해서 여러 방법을 사용할 수 있는데 나는 list comprehension을 사용하였다.
+```python
+[int(i) for i in input()]
+```
+BFS를 수행하면서 방문한 정점의 depth 정보를 저장할 필요가 있다.  
+이를 위해 1로 되어 있는 정점의 값을 탐색하는 동안 depth값으로 바꾸어 준다.  
+```python
+# x, y는 queue에서 popleft()로 얻은 정점의 위치
+# nx, ny는 다음으로 방문할 정점의 위치
+graph[nx][ny] = graph[x][y] + 1
+```
+
+# Python 구현
+-----
+```python
+# 입력처리
+N, M = map(int, input().split())
+maze = []
+for _ in range(N):
+    # 각각의 수들은 붙어서 입력이 주어진다.
+    maze.append([int(i) for i in input()])
+
+# 최단 거리를 구하기 위해서 BFS로 풀이 (출발: [0, 0], 목적지: [N - 1, M - 1])
+from collections import deque
+
+def bfs(graph, start, visited):
+    queue = deque([start])
+    visited[start[0]][start[1]] = True
+    while queue:
+        x, y = queue.popleft()
+        for nx, ny in [[x, y - 1], [x, y + 1], [x + 1, y], [x - 1, y]]:
+            if (nx in range(N)) and (ny in range(M)) and (visited[nx][ny] == False) and (graph[nx][ny] != 0):
+                queue.append([nx, ny])
+                visited[nx][ny] = True
+                graph[nx][ny] = graph[x][y] + 1
+                if (nx == N - 1) and (ny == M - 1):
+                    return graph[nx][ny]
+        
+# visited 배열 생성
+visited = [[False] * (M) for _ in range(N)]
+
+print(bfs(maze, [0, 0], visited))
+```
