@@ -1,0 +1,91 @@
+---
+layout: post
+title:  "[백준] 2331. 반복수열"
+date:   2021-08-12 22:00:00 +0900
+categories: 백준 알고리즘
+---
+[백준 2331번](https://www.acmicpc.net/problem/2331)
+
+# 문제
+-----
+다음과 같이 정의된 수열이 있다.  
+D[1] = A  
+D[n] = D[n-1]의 각 자리의 숫자를 P번 곱한 수들의 합  
+
+예를 들어 A=57, P=2일 때, 수열 D는 {57, 74(=5^2+7^2=25+49), 65, 61, 37, 58, 89, 145, 42, 20, 4, 16, 37, …}이 된다.   
+그 뒤에는 앞서 나온 수들(57부터가 아니라 58부터)이 반복된다.  
+
+이와 같은 수열을 계속 구하다 보면 언젠가 이와 같은 반복수열이 된다.   
+이때, 반복되는 부분을 제외했을 때, 수열에 남게 되는 수들의 개수를 구하는 프로그램을 작성하시오.   
+위의 예에서는 {57, 74, 65, 61}의 네 개의 수가 남게 된다.  
+
+# 입력
+-----
+첫째 줄에 A(1 ≤ A ≤ 9999), P(1 ≤ P ≤ 5)가 주어진다.
+```
+57 2
+```
+
+# 출력
+-----
+첫째 줄에 반복되는 부분을 제외했을 때, 수열에 남게 되는 수들의 개수를 출력한다.
+```
+4
+```
+
+# 풀이
+-----
+이 문제는 DFS문제라고 하는데 내 마음대로 풀었다. 다행히 정답은 맞췄는데 DFS는 어떻게 사용하는 것일까?  
+내 마음대로 푼 방식은 간단하다. 그냥 원소 하나씩 차례대로 구하면서 반복되는 순간을 찾아내는 것이다.  
+4년 전의 나는 DFS로 풀었던데... 한번 풀이를 보고 와야겠다.  
+
+음...보고 왔는데 DFS를 통해서 수열이 반복될때까지 탐색을 한다.  
+특이사항이 있다면 DFS를 구현할 때, 단순 재귀가 아니라 return문에 재귀를 사용한다.  
+그리고 그 return값은 해당 원소가 처음 수열에 등장한 index이다.  
+개인적으로는 억지로 DFS를 쓴 느낌...? ㄷㄷㄷ
+
+# Python 구현 (내맘대로 버전)
+-----
+```python
+def d(A, P):
+    A_list = map(int, list(str(A)))
+    result = 0
+    for i in A_list:
+        result += i ** P
+    return result
+
+A, P = map(int, input().split())
+
+A_history = [A]
+while True:
+    A = d(A, P)
+    if A in A_history:
+        print(A_history.index(A))
+        break
+    else:
+        A_history.append(A)
+```
+
+# Python 구현 (DFS 버전)
+-----
+```python
+def d(A, P):
+    A_list = map(int, list(str(A)))
+    result = 0
+    for i in A_list:
+        result += i ** P
+    return result
+
+A, P = map(int, input().split())
+
+def dfs(A, P, visited, count):
+    visited[A] = count
+    new_A = d(A, P)
+    if new_A not in visited:
+        return dfs(new_A, P, visited, count + 1)
+    else:
+        return visited[new_A] - 1
+
+visited = {}
+print(dfs(A, P, visited, 1))
+```
