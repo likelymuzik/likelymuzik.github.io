@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "04. 구구단 2단 3단 4단 만들기"
+title:  "04. 구구단 2단 3단 4단 5단 만들기"
 date:   2021-08-11 21:00:00 +0900
 categories: Java 구구단
 ---
@@ -153,6 +153,7 @@ public class Gugudan {
 //		result = 4 * 9;
 //		System.out.println(result);
 		
+		// 5단
 		System.out.println("구구단 중 출력할 단은? : ");
 		Scanner scanner = new Scanner(System.in);
 		int number = scanner.nextInt();
